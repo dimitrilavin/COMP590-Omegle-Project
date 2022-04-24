@@ -25,6 +25,8 @@
     <script type="text/javascript">
         function takeshot() {
             let div = document.getElementById('othervideo');
+            div.setAttribute('width',224)
+            div.setAttribute('height',224)
             html2canvas(div).then(
                 function (canvas) {
                     // document
