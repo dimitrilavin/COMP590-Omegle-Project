@@ -3,6 +3,9 @@
     <head>
         <title>Let's Keep It PG</title>
     </head>
+    <script src=
+        "https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js">
+    </script>
     <style type="text/css">
     body {
         margin: 5px;
@@ -14,5 +17,25 @@
     </style>
     <body>
         <h1>Let's Keep It PG</h1>
+        <button onclick="takshot()">Take screenshot</button>
+        <div id="output">
+            <img src="image.png">
+        </div>
     </body>
+    <script type="text/javascript">
+        function takeshot() {
+            let div = document.getElementById('othervideo');
+            html2canvas(div).then(
+                function (canvas) {
+                    // document
+                    // .getElementById('output')
+                    // .appendChild(canvas);
+                    let image = canvas.toDataURL("image/png", 0.5);
+                }
+            )
+            .catch((e) => {
+                console.log(e);
+            })
+        }
+    </script>
 </html>
